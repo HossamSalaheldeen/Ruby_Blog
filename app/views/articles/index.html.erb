@@ -1,19 +1,22 @@
-<h1>Listing articles</h1>
-<%= link_to 'New article', new_article_path %>
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Text</th>
-    <th></th>
-  </tr>
- 
+<h1 class='alert alert-info'>Listing articles</h1>
+<%= link_to 'New article', new_article_path, class: 'btn btn-success mt-4' %>
+<table class="table mt-5">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">Title</th>
+            <th scope="col">Text</th>
+            <th scope="col">Action</th>
+            <th scope="col">Action</th>
+            <th scope="col">Action</th>
+        </tr>
+    </thead>
   <% @articles.each do |article| %>
     <tr>
-      <td><%= article.title %></td>
+      <td scope="row"><%= article.title %></td>
       <td><%= article.text %></td>
-      <td><%= link_to 'Show', article_path(article) %></td>
-      <td><%= link_to 'Edit', edit_article_path(article) %></td>
-      <td><%= link_to 'Destroy', article_path(article),
+      <td><%= link_to 'Show', article_path(article), class: 'btn btn-primary' %></td>
+      <td><%= link_to 'Edit', edit_article_path(article), class: 'btn btn-warning' %></td>
+      <td><%= link_to 'Destroy', article_path(article), class: 'btn btn-danger',
               method: :delete,
               data: { confirm: 'Are you sure?' } %></td>
     </tr>

@@ -1,3 +1,4 @@
+<h1 class="alert alert-info">Article Details</h1>
 <p>
   <strong>Title:</strong>
   <%= @article.title %>
@@ -8,10 +9,10 @@
   <%= @article.text %>
 </p>
  
-<h2>Comments</h2>
+<h2 class="alert alert-dark">Comments</h2>
 <%= render @article.comments %>
  
-<h2>Add a comment:</h2>
+<h4 class="alert alert-secondary">Add a comment:</h4>
 <%= render 'comments/form' %>
  
 <%= link_to 'Edit', edit_article_path(@article) %> |
