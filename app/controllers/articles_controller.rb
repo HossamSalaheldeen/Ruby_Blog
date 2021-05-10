@@ -1,12 +1,16 @@
 class ArticlesController < ApplicationController
     # http_basic_authenticate_with name: "hossam", password: "123456", except: [:index, :show]
+    load_and_authorize_resource
+    # authorize_resource class: false
     before_action :authenticate_user!
     def index
         @articles = Article.all
+        # render :json => @articles
     end
 
     def show
         @article = Article.find(params[:id])
+        # render :json => @article
     end
     
     def new
